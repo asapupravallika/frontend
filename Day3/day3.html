@@ -1,0 +1,129 @@
+<!--
+Display behaviour
+
+Block level elements: are the elements which occupy total space and always start from a new line.
+ex: heading, paragraph, list, table, form
+
+Inline elements are the elements which occupy necessary space and does not start from a new line.
+ex: span, anchor, img, input
+
+div and span: division elements which is used to group the sections for applying styles. Block level element is div.
+
+span: is used to group the text for applying styles. It is an inline element.
+
+Semantics: are used to convey the meaning about the content to the browser and developer. It is used to improve the accessibility of the web page.
+ex:
+<header>content</header>
+<nav>content</nav>
+<main>content</main>
+<article>content</article>
+<aside>content</aside>
+<footer>content</footer>
+
+Forms: are used to collect the data from the user and allowing users to submit the data to the server for processing. It is used to create interactive web pages.
+ex: sign up form, login form, feedback form, contact form, registration form
+forms are defined using <form> tag.
+form fields are defined using input, textarea, select, button tags.
+<form>
+
+</form>
+1) type : it controls the form field behavior.
+
+2) placeholder : it conveys the meaning about the form field.
+
+3) for and id : it is used to form the relation between the input and label.
+
+4) name : it will act as a key and carry the data in key and value pair to the server.
+
+5) value : it provides the pre-defined value.
+
+Applications:
+-->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    
+    <form action="" method="POST">
+        <!--formsubmit.co-->
+    <label for="inp">Enter your name:</label>
+    <input type="text" id="inp" name="username" placeholder="Enter username" required>
+    <br><br>
+
+    <label for="email">Enter your email:</label>
+    <input type="email" id="email" name="email" placeholder="Enter your mail id" required>
+    <br><br>
+
+    <label for="phone">Enter phone number:</label>
+    <input type="number" id="phone" name="phone" placeholder="Enter phone number">
+    <br><br>
+
+    <label for="slot">Book your slot: </label>
+    <input type="datetime-local" id="slot" name="slot">
+    <br><br>
+
+    <label for="reports">Upload your reports: </label>
+    <input type="file" id="reports" name="reports">
+    <br><br>
+
+    <label for="pwd">Enter your password:</label>
+    <input type="password" id="pwd" name="password" placeholder="Enter password">
+    <br><br>
+
+    <input type="date" name="" id="">
+    <input type="month" name="" id="">
+    <input type="week" name="" id="">
+
+    <input type="search" name="" id="">
+    <input type="range" name="" id="">
+
+
+    <button type="submit">Submit</button>
+    <button type="reset">Reset</button>
+</form>
+
+<br>
+
+<form action="" method="POST">
+    <!--
+    Select your Tech Stack: <br>
+    <input type = "radio" name="skillset" id="" value="java">
+    <label for="java">Java Full Stack</label> <br>
+
+    <input type = "radio" name="skillset" id="" value="python">
+    <label for="python">Python Full Stack</label> <br>
+
+    <input type = "radio" name="skillset" id="" value="mern">
+    <label for="mern">MERN Stack</label> <br><br>
+
+    <button type ="submit">Submit</button>
+    -->
+
+    <input type="checkbox" id="html" name="skill">
+    <label for="html">HTML</label> <br>
+    <input type="checkbox" id="css" name="skill">
+    <label for="css">CSS</label> <br>
+    <input type="checkbox" id="js" name="skill">
+    <label for="js">JavaScript</label> <br><br>
+
+    <label for="">Choose your education</label>
+    <select name="education" id="">
+        <option value="btech">BTech</option>
+        <option value="degree">Degree</option>
+    </select> <br><br>
+
+    <label for="">Address</label> <br>
+    <textarea name="address" id="" cols="30" rows="5" placeholder="Enter your address"></textarea> <br><br>
+
+    <input type="checkbox" required><label for="">I agree to the terms and conditions</label> <br>
+    <button type="submit">Submit</button>
+
+</form>
+
+
+</body>
+</html>
