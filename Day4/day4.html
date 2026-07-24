@@ -1,0 +1,152 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+
+    <!--CSS: Cascading Style Sheets
+    Cascading: flowing
+    style : properties
+    sheets : doc
+
+    It is used to describe the presentation of a html document, it deals with colors, text, fonts, backgrounds, animations, layouts and media queries.
+
+    How to insert CSS:
+    1. Inline CSS 
+        styles are added to the html element itself by using style attribute.
+        <h1 style='color: red;'>Inline Content</h1>
+    2. Internal CSS
+        styles are added to the html document using style tag in head section.
+        <style></style>
+
+        Selectors:
+        it is used to target the html elements for applying styles.
+
+        SYNTAX:
+        selector{
+            property: value;
+        }
+        
+        h2{
+        color:green;
+        }
+
+    3. External CSS
+        In this, styles are defined in external css file with .css extension and linked with html document using link tag in head section.
+
+    High Specificity(High Precedence): Inline > Internal > External
+    
+    Types of Selectors:
+    1) Simple Selector:
+    a) element selector or tagname selector
+    h1{
+        color: red;
+    }
+
+    b) class selector
+    denoted with .classname
+    it is used to apply styles to the multiple elements
+    .title{
+        color: green;
+    }
+
+    c) id selector
+    denoted with #idname
+    it is used to apply styles to the single element
+    #heading{
+        color: blue;
+    }
+
+    2) combinators
+    3) pseudo class
+    4) attribute
+
+    specificity in selectors:
+    1) id has high specificity
+    2) class has medium specificity
+    3) tagname has low specificity
+
+    Box model
+    It described the presentation of an element. It consists of 4 components:
+    1) content: 
+        width 
+        height
+    2) padding: it is the space around the content.
+        padding:20px;
+        padding: 10px 20px 30px 40px; (top right bottom left)
+        padding: 10px 20px 30px;  (top right/left bottom)
+        padding: 10px 20px; (top/bottom right/left)
+    3) border: it is the line around the padding.
+        border: 1px ridge/groove/solid/inset/outset black;
+        border-radius: 10px;
+    4) margin: it is the space around the element or between the elements.
+        margin: 10px;
+
+    display: inline-block; it will behave like inline element but we can apply width and height to it.
+    -->
+
+    <!--External CSS-->
+    <link rel="stylesheet" href="demo.css">
+
+    <!--Internal CSS-->
+    <style>
+        h1{
+            color:green;
+        }
+
+        .title{
+            color: red;
+            text-align: center;
+            background-color: yellow;
+            width:40%;
+            height:200px;
+            padding: 10px 20px 30px 40px;
+            border: 5px ridge blue;
+            border-radius: 10px;
+            margin: 20px 10px 30px 40px;
+            display: inline-block;
+            background-image: url("https://t4.ftcdn.net/jpg/07/64/97/13/360_F_764971346_UWnWBvmGqINw3LyDFDH7RBYOWDN7Qij0.jpg");
+            background-repeat: no-repeat;
+            background-size: cover;
+            background-size: contain;
+            background-size: 100% 100%;
+            /* background-attachment: fixed */
+        }
+
+        #el1{
+            color: blue;
+        }
+
+        h2{
+            color: orange;
+        }
+
+        span{
+            color: white;
+            background-color: purple;
+            padding: 5px;
+        }
+    </style>
+
+</head>
+<body>
+    <h1 style = 'color: red;'>Inline Content</h1>
+    <h2>Internal Content</h2>
+    <h3>External Content</h3>
+
+    <h1>Inline Content</h1>
+    <h3 id="el1">External Content</h3>
+
+    <div>
+        <h2 class="title">Internal Content</h2>
+        <h2 class="title">Internal Content</h2>
+        <h2 class="title">Internal Content</h2>
+        <h2 class="title">Internal Content</h2>
+    </div>
+
+    <p>
+        This is an <span>inline element</span> paragraph
+    </p>
+</body>
+</html>
