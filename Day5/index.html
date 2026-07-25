@@ -1,0 +1,208 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        /*
+        combinators: it is used to apply styles based on a relation
+        children selector: it is used to apply styles to direct child
+        header>button>a
+        descendant selectors: it is used to apply styles to all child
+        header button
+
+        universal selector: used to apply to every element
+        *{border: 1px solid red}
+
+        boiler plate code
+        *{
+        margin:0;
+        padding:0;
+        box-sizing:border-box;
+        }
+
+        text properties
+        text-align: center right left;
+        text-shadow: hoffset voffset blurradius color;
+        text-shadow: 1px 1px 5px black;
+
+        h1{
+        text-shadow: 1px 1px 2px red;
+        }
+
+        Font Properties:
+
+        1) font-family: cursive;
+        2) font-size: 1rem;
+        3) font-weight: 100-900;
+
+        Hover
+        transform:translate();
+        transform:rotate(20deg);
+        transform:scale(1.5);
+        */
+
+        *{
+        margin:0;
+        padding:0;
+        box-sizing:border-box;
+        }
+
+        header,footer{
+            background: rgb(0, 0, 97);
+            text-align: center;
+            padding: 20px;
+        }
+        
+        header>button{
+            color: white;
+            background-color: rgb(98, 98, 218);
+            padding: 10px;
+            border: 0;
+            margin: 10px;
+            border-radius: 10px;
+            transition: all 500ms;
+        }
+
+        header>button:hover{
+            transform: translate(0,-5px);
+        }
+        
+
+        .s1{
+            text-align: center;
+            background: linear-gradient(rgba(0,0,0,0.65),rgba(0,0,0,0.65)), url("https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTN0C8OFNF5wqJYib5pY67wIbGIyJr76mMTUHVshi8mtqsGxHu-s41atf0&s=10");
+            height: 90vh;
+            background-size: 100% 100%;
+            color:white;
+            padding: 250px 20px; 
+        }
+
+        .s2{
+            text-align: center;
+            padding: 100px;
+        }
+
+        .box{
+            width: 100px;
+            height: 100px;
+            color: white;
+            display: inline-block;
+            margin: 30px;
+            padding: 30px;
+            border-radius: 10px;
+            box-shadow: 0px 0px 4px 0px rgb(4, 4, 2);
+            transition: all 700ms;
+        }
+
+        .box:hover{
+            transform: scale(1.2);
+        }
+
+        .s3{
+            background: whitesmoke;
+            text-align: center;
+            padding: 100px;
+        }
+
+        .card{
+            margin: 10px;
+            padding: 30px;
+            border:2px solid blue;
+            display: inline-block;
+            width: 30%;
+            background: white;
+            border-radius: 10px;
+            height: 200px;
+            transition: all 500ms;
+        }
+
+        .card:hover{
+            transform: translate(0,-5px);
+        }
+
+        .s4{
+            text-align: center;
+            width: 50%;
+            margin: auto;
+            padding: 100px;
+        }
+
+        .parent{
+            text-align: center;
+        }
+
+        .card2{
+            background: rgb(205, 230, 255);
+            margin: 10px;
+            height: 50px;
+            padding: 15px;
+            border-radius: 5px;
+            width: 500px;
+        }
+        
+    </style>
+</head>
+<body>
+    <header>
+        <button>Home</button>
+        <button>About</button>
+        <button>Services</button>
+        <button>Contact</button>
+    </header>
+
+    <section class="s1">
+        <h1>Learn CSS Through Projects</h1>
+        <br>
+        <p>This project demonstrates CSS Colors, Backgrounds, Flexbox, Box Model, Typography, Shadows, and Responsive Design in one modern webpage.</p>
+    </section>
+
+    <section class="s2">
+            <h1>🎨 CSS Colors</h1>
+            <div class="box" style="background:red">Red</div>
+            <div class="box" style="background:green">Green</div>
+            <div class="box" style="background:blue">Blue</div>
+            <div class="box" style="background:violet">Violet</div>
+        </div>
+    </section>
+
+    <section class="s3">
+        <h1>📦 CSS Box Model</h1>
+        <div class="parent">
+            <div class="card">
+                <h3>Card One</h3>
+                <p>Padding creates space inside the element. Border surrounds the content. Margin creates space outside the element.</p>
+            </div>
+            <div class="card">
+                <h3>Card Two</h3>
+                <p>Padding creates space inside the element. Border surrounds the content. Margin creates space outside the element.</p>
+            </div>
+            <div class="card">
+                <h3>Card Three</h3>
+                <p>Padding creates space inside the element. Border surrounds the content. Margin creates space outside the element.</p>
+            </div>
+        </div>
+    </section>
+
+    <section class="s4">
+        <h1>🔤 CSS Fonts</h1>
+        <div class="parent2">
+            <div class="card2" style="font-weight: 300;">
+                <p>Light Font Weight (300)</p>
+            </div>
+            <div class="card2" style="font-weight: 400;">
+                <p>Normal Font Weight (400)</p>
+            </div>
+            <div class="card2" style="font-weight: 700;">
+                <p>Bold Font Weight (700)</p>
+            </div>
+        </div>
+        <p>This paragraph demonstrates font-family, font-size, letter-spacing, line-height, and font-weight properties.</p>
+    </section>
+
+    <footer style="color:white">
+        <p>© 2026 CSS Learning Project | Designed for Frontend Practice</p>
+    </footer>
+</body>
+</html>
