@@ -1,0 +1,211 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/7.3.0/css/all.min.css" integrity="sha512-ApSLB1Pd3/bZN8fWB/RG9YhN/7bd9Hkf3AGaE2mPfebjrxagjuBtx2GcgdqIlJkUzwylBo61r9Xa9NmgBI0swA==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <style>
+        *{
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        header{
+            background: black;
+            color: white;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 20px;
+        }
+        header span{
+            border: 2px solid rgb(54, 222, 54);
+            padding: 5px;
+            color: rgb(54, 222, 54);
+            text-align: center;
+            margin: 15px;
+        }
+        header a{
+            color: white;
+            padding: 10px;
+            text-decoration: none;
+            transition: all 500ms;
+        }
+
+        header a:hover{
+            color:rgb(54, 222, 54);
+            border-bottom: 2px solid ;
+        }
+
+        .s1{
+            display: flex;
+            align-items: center;
+            font-size: 1.5rem;
+            line-height: 1.5;
+            background-color: black;
+            background-size: 100% 100%;
+            height: 90vh;
+            color: white;
+        }
+        .s1 div{
+            flex-basis: 50%;
+            padding:3%;
+        }
+        .s1 img{
+            width: 100%;
+            height: 100%;
+        }
+        .s1 span{
+            color: rgb(54, 222, 54);
+        }
+        .btn1{
+            padding: 10px;
+            background: rgb(54, 222, 54);
+            border: 2.5px solid rgb(54, 222, 54);
+        }
+        .btn2{
+            padding: 10px;
+            background: transparent;
+            color: white;
+            border: 2.5px solid rgb(54, 222, 54);
+        }
+        .s1 div p{
+            font-size: 20px;
+            color: gray;
+        }
+
+        .s2{
+            padding: 2%;
+            background-color: black;
+        }
+
+        .s2 div{
+            height: 90vh;
+            background: rgb(76, 75, 75);
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+
+        .s2 h1{
+            background: rgb(33, 135, 33);
+            color: white;
+            padding: 20px;
+        }
+
+        .s3{
+            padding: 2%;
+            height: 100vh;
+            background-color: black;
+            color: white;
+            text-align: center;
+        }
+
+        .s3 h1{
+            border-bottom: 2px solid rgb(54, 222, 54);
+            text-align: center;
+        }
+
+        .parent{
+            display: flex;
+            gap: 5%;
+            padding: 10px;
+        }
+
+        .card{
+            background: rgb(68, 67, 67);
+            height: 50vh;
+            padding: 10px;
+            margin: 10px;
+            border: 2px solid rgb(68, 67, 67);
+            border-radius: 5px;
+            transition: all 500ms;
+        }
+
+        .card:hover{
+            border: 2px solid rgb(54, 222, 54);
+            transform: translate(0px, -10px);
+        }
+
+        .s3 i{
+            color: rgb(54, 222, 54);
+            font-size: 3rem;
+            line-height: 2;
+        }
+
+        @media screen and (width<550px){
+            .s1 {
+                flex-direction: column;
+            }
+            .s3{
+                height: 100%;
+            }
+            .parent{
+                flex-direction: column;
+            }
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <div>
+            <h1><span>JD</span>John Doe</h1>
+        </div>
+        <nav>
+            <a href="#about">About</a>
+            <a href="#achivements">Achievments</a>
+            <a href="#education">Education</a>
+            <a href="#projects">Projects</a>
+            <a href="#contact">Contact</a>
+        </nav>
+    </header>
+    <section class="s1">
+        <div>
+            <h1>Hi, I'm <span>John Doe</span></h1>
+            <h2>I build simple and clean websites</h2>
+            <p>I am a web development student who loves turning ideas into real, working</p>
+            <button class="btn1">View Projects</button>
+            <button class="btn2">Download CV</button>
+        </div>
+        <div>
+            <img src="https://static.vecteezy.com/system/resources/thumbnails/032/433/364/small/elegant-laptop-with-stunning-generative-ai-wallpaper-photo.jpg" alt="">
+        </div>
+    </section>
+
+    <section class="s2">
+        <div>
+            <h1>FullStack Dev</h1>
+        </div>
+    </section>
+
+    <section class="s3">
+        <h1>What I Do</h1>
+        <div class="parent">
+            <div class="card">
+                <i class="fa-solid fa-desktop"></i>
+                <h2>Web Design</h2>
+                <p>Design clean and attractive websites that provide great user experience.</p>
+            </div>
+
+            <div class="card">
+                <i class="fa-solid fa-code"></i>
+                <h2>Web Design</h2>
+                <p>Design clean and attractive websites that provide great user experience.</p>
+            </div>
+
+            <div class="card">
+                <i class="fa-solid fa-palette"></i>
+                <h2>Web Design</h2>
+                <p>Design clean and attractive websites that provide great user experience.</p>
+            </div>
+
+            <div class="card">
+                <i class="fa-solid fa-location-dot"></i>
+                <h2>Web Design</h2>
+                <p>Design clean and attractive websites that provide great user experience.</p>
+            </div>
+        </div>
+    </section>
+</body>
+</html>
