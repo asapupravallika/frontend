@@ -1,0 +1,604 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Jevelin Smart Watch</title>
+
+<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-icons/1.13.1/font/bootstrap-icons.min.css"/><link href="https://googleapis.com" rel="stylesheet">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/7.3.0/css/all.min.css" integrity="sha512-ApSLB1Pd3/bZN8fWB/RG9YhN/7bd9Hkf3AGaE2mPfebjrxagjuBtx2GcgdqIlJkUzwylBo61r9Xa9NmgBI0swA==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+<link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+
+<style>
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+    font-family:Arial,sans-serif;
+}
+
+body{
+    font-family:Arial,sans-serif;
+    background:#2f2f2f;
+    padding-top:90px;
+}
+
+.custom-navbar{
+    position:fixed;
+    top:0;
+    left:0;
+    width:100%;
+    z-index:1000;
+    background:#2f2f2f;
+    padding:18px 70px;
+}
+
+.navbar-brand{
+    color:#fff;
+    font-size:40px;
+    font-weight:bold;
+}
+
+.nav-link{
+    color:#fff;
+    margin:0 18px;
+    font-size:18px;
+}
+
+.nav-link:hover{
+    color:#8b5cf6;
+}
+
+.cart-icon{
+    color:#fff;
+    font-size:25px;
+    margin-right:20px;
+}
+
+.buy-btn{
+    border:none;
+    color:#fff;
+    padding:12px 35px;
+    border-radius:40px;
+    font-weight:bold;
+    background:#7c3aed;
+}
+
+.s1{
+    display:flex;
+    justify-content:space-between;
+    align-items:center;
+    min-height:100vh;
+    padding:0 80px;
+    background:#2f2f2f;
+    color:white;
+}
+
+.image{
+    display:flex;
+    justify-content:flex-end;
+    align-items:center;
+}
+
+.image img{
+    width:100%;
+    max-width:600px;
+    height:auto;
+}
+
+.s2{
+    background:#fff;
+    text-align:center;
+    padding:80px 40px;
+}
+
+.gallery{
+    display:flex;
+    justify-content:center;
+    gap:25px;
+    margin-top:50px;
+    flex-wrap:wrap;
+}
+
+.gallery img{
+    width:320px;
+    border-radius:15px;
+    transition:.3s;
+}
+
+.gallery img:hover{
+    transform:scale(1.05);
+}
+
+.s3{
+    background:#fff;
+    padding:100px 0;
+    color:#252424;
+}
+
+.s3 .h5{
+    color:#252424;
+}
+
+.feature-icon{
+    font-size:35px;
+    color:#7c3aed;
+    min-width:50px;
+}
+
+.s4{
+    background:#fff;
+    padding:100px 0;
+}
+
+.feature{
+    margin-bottom:70px;
+}
+
+.feature h3{
+    font-size:34px;
+    font-weight:700;
+    color:#35324a;
+    margin-bottom:20px;
+}
+
+.feature p{
+    color:#8d8a9d;
+    font-size:24px;
+    line-height:1.8;
+}
+
+.percentage{
+    text-align:right;
+    font-size:32px;
+    font-weight:700;
+    color:#35324a;
+    margin-bottom:15px;
+}
+
+.progress{
+    width:100%;
+    height:5px;
+    background:#eceaf5;
+    border-radius:10px;
+}
+
+.progress-fill{
+    height:100%;
+    background:#7a2cff;
+    border-radius:10px;
+}
+
+.storage{
+    width:30%;
+}
+
+.battery{
+    width:80%;
+}
+
+.display{
+    width:60%;
+}
+
+@media(max-width:992px){
+    .s1{
+        flex-direction:column;
+        text-align:center;
+        padding:50px 40px;
+    }
+}
+
+.s5{
+    background:#fff;
+    padding:100px 100px;
+}
+
+.s5 h1{
+    margin-bottom:10px;
+    font-weight:800;
+    font-size:50px;
+}
+
+.s6{
+    padding:100px 100px;
+    text-align:center;
+}
+
+.s6 h1{
+    margin-bottom:10px;
+    font-weight:800;
+    font-size:50px;
+    color:white;
+}
+
+.s6 .card{
+    padding:20px;
+    background:#252424;
+}
+
+.s6 .card h4{
+    margin-bottom:10px;
+    font-weight:800;
+    font-size:30px;
+}
+
+.s6 .card img{
+    width:100%;
+    max-width:300px;
+    height:auto;
+    border-radius:15px;
+}
+
+.s6 button{
+    border: 2px solid white;
+    background:transparent;
+    color:white;
+    padding:12px 35px;
+    border-radius:40px;
+    width:200px;
+}
+
+.s6 button:hover{
+    color:#767474;
+    border-color:#767474;
+}
+
+.s7{
+    background:#fff;
+    padding:100px 100px;
+}
+
+.s7 h1{
+    margin-bottom:10px;
+    font-weight:800;
+    font-size:50px;
+    text-align:center;  
+}
+
+.s7 p{
+    text-align:center;
+    color:#8d8a9d;
+    font-size:18px;
+    padding:0 400px;
+    line-height:1.8;
+}
+
+.s8{
+    background:#a836ee;
+}
+
+.s8 .fa-brands{
+    padding:20px;
+    color:#ddb8f4;
+    font-size:30px;
+    margin:0 20px;
+}
+
+.s9 h4,h5{
+    color:white;
+}
+
+.s9 p{
+    color:#8d8a9d;
+}
+
+</style>
+</head>
+<body>
+
+<nav class="navbar navbar-expand-lg custom-navbar ">
+<div class="container-fluid">
+<a class="navbar-brand" href="#">Jevelin</a>
+
+<button class="navbar-toggler bg-light" data-bs-toggle="collapse" data-bs-target="#menu">
+<span class="navbar-toggler-icon"></span>
+</button>
+
+<div class="collapse navbar-collapse" id="menu">
+<ul class="navbar-nav mx-auto">
+<li class="nav-item"><a class="nav-link" href="#">Home</a></li>
+<li class="nav-item"><a class="nav-link" href="#">Gallery</a></li>
+<li class="nav-item"><a class="nav-link" href="#">Features</a></li>
+<li class="nav-item"><a class="nav-link" href="#">Reviews</a></li>
+<li class="nav-item"><a class="nav-link" href="#">Shop</a></li>
+</ul>
+
+<div class="d-flex align-items-center">
+<i class="bi bi-cart cart-icon"></i>
+<button class="buy-btn">BUY NOW</button>
+</div>
+</div>
+</div>
+</nav>
+
+<section class="s1">
+
+<div data-aos="fade-right"data-aos-easing="ease-out-cubic"
+     data-aos-duration="2000">
+<h1 class="display-1 fw-bold">Lifestyle</h1>
+<h1 class="display-1 fw-bold">Smart <span style="color:rgb(135, 19, 219);">Watch</span></h1>
+
+<h6 class="fw-bold">TECHNOLOGY OF THE FUTURE</h6>
+
+<p class="w-75" style="color: #c8c4c4;line-height: 1.8;">
+Lorem ipsum dolor sit amet, consectetur adipisicing elit.
+Mauris vitae sodales lectus, non ultrices nisi. In varius.
+</p>
+</div>
+
+<div class="image" data-aos="fade-left" data-aos-easing="ease-out-cubic"
+     data-aos-duration="2000">
+<img src="https://jevelin.shufflehound.com/single-product/wp-content/uploads/sites/29/2018/03/Vector-Smart-Object-copy-3.png">
+</div>
+
+</section>
+
+<section class="s2" data-aos="fade-up">
+
+<h6 class="p-4">ABOUT OUR WATCHES</h6>
+
+<h2 class="display-4 fw-bold">
+<span class="text-primary">New, Improved</span> Design
+</h2>
+
+<h2 class="display-4 fw-bold">and performance</h2>
+
+<p>
+Lorem ipsum dolor sit amet consectetur adipisicing elit.
+<br>
+Minima suscipit commodi officia repellendus.
+</p>
+
+<div class="gallery">
+
+<img src="https://jevelin.shufflehound.com/single-product/wp-content/uploads/sites/29/2018/03/gallery6.jpg">
+
+<img src="https://jevelin.shufflehound.com/single-product/wp-content/uploads/sites/29/2018/03/gallery5.jpg">
+
+<img src="https://jevelin.shufflehound.com/single-product/wp-content/uploads/sites/29/2018/03/gallery7.jpg">
+
+</div>
+
+</section>
+<section class="s3">
+    <div class="container">
+        <div class="row align-items-center gx-5">
+
+            
+            <div class="col-lg-6 text-center mb-5 mb-lg-0" data-aos="flip-up" data-aos-easing="ease-out-cubic"
+     data-aos-duration="2000">
+                <img src="https://jevelin.shufflehound.com/single-product/wp-content/uploads/sites/29/2018/03/Replace-screen-inside-this-SO3-1.jpg"
+                    class="img-fluid" alt="">
+            </div>
+
+            
+            <div class="col-lg-6 ps-lg-5 text-start">
+
+                <h6 class="text-uppercase">MEET WITH OUR</h6>
+                <h2 class="mb-5">Splendid Features</h2>
+
+                
+                <div class="d-flex mb-4">
+                    <i class="bi bi-mic feature-icon"></i>
+
+                    <div class="ms-4">
+                        <h5>Voice Recognition</h5>
+                        <p>
+                            Lorem ipsum dolor sit amet, consectetur adipiscing  <br>
+                            elit. Mauris blandit aliquet elit.
+                        </p>
+                    </div>
+                </div>
+
+                
+                <div class="d-flex mb-4">
+                    <i class="bi bi-phone feature-icon"></i>
+
+                    <div class="ms-4">
+                        <h5>Connect with your phone</h5>
+                        <p>
+                            Lorem ipsum dolor sit amet, consectetur adipiscing <br>elit.
+                            Mauris blandit aliquet elit.
+                        </p>
+                    </div>
+                </div>
+
+                
+                <div class="d-flex">
+                    <i class="bi bi-rss feature-icon"></i>
+
+                    <div class="ms-4">
+                        <h5>Any task at hand</h5>
+                        <p>
+                            Lorem ipsum dolor sit amet, consectetur adipiscing <br>elit.
+                            Mauris blandit aliquet elit.
+                        </p>
+                    </div>
+                </div>
+
+            </div>
+
+        </div>
+    </div>
+</section>
+
+<section class="s4 ">
+    <div class="container">
+        <div class="row align-items-center">
+
+            <!-- Left Side -->
+            <div class="col-lg-6">
+
+                <h6>NOW UPGRADE FOR</h6>
+                <h2 class="fw-bold">Best Experience</h2>
+
+                <div class="feature">
+                    <h3>+ Increased storage</h3>
+
+                    <p>
+                        Lorem ipsum dolor sit amet, con<br>
+                        sectetur adipisicing elit. Mauris
+                    </p>
+
+                    <div class="percentage">30%</div>
+
+                    <div class="progress">
+                        <div class="progress-fill storage"></div>
+                    </div>
+                </div>
+
+                <div class="feature">
+                    <h3>+ Battery life</h3>
+
+                    <p>
+                        Lorem ipsum dolor sit amet, con<br>
+                        sectetur adipisicing elit. Mauris
+                    </p>
+
+                    <div class="percentage">80%</div>
+
+                    <div class="progress">
+                        <div class="progress-fill battery"></div>
+                    </div>
+                </div>
+
+                <div class="feature">
+                    <h3>+ Display surface</h3>
+
+                    <p>
+                        Lorem ipsum dolor sit amet, con<br>
+                        sectetur adipisicing elit. Mauris
+                    </p>
+
+                    <div class="percentage">60%</div>
+
+                    <div class="progress">
+                        <div class="progress-fill display"></div>
+                    </div>
+                </div>
+
+            </div>
+
+            <div class="col-lg-6 text-end"data-aos="flip-up" data-aos-easing="ease-out-cubic" data-aos-duration="2000">
+                <img src="https://jevelin.shufflehound.com/single-product/wp-content/uploads/sites/29/2018/03/Group-811211112-copy-71-1.jpg"
+                     class="img-fluid"
+                     alt="">
+            </div>
+
+        </div>
+    </div>
+</section>
+
+
+<section class="s5">
+    <h6 class="fw-bold" style="color:rgb(167, 167, 167);">HOW IT WORKS</h6>
+    <h1><span style="color: #7c3aed;">See for yourself</span></h1>
+    <h1>Quick video introduction</h1>
+    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Mauris vitae odales lectus, non ultrices nisi. In varius, leo non gravida.</p>
+    <div class="text-center">
+        <iframe width="1000" height="562" src="https://www.youtube.com/embed/g4n2yVPnQzs" title="Jevelin Theme - Getting Started (under 2 minutes)" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+    </div>
+</section>
+
+<section class="s6">
+    <div class="container">
+        <div class="row">
+            <h6 class="fw-bold" style="color:rgb(167, 167, 167);">ADJUSTABLE STRAPS</h6>
+            <h1>Choose the best<br>color for your activity</h1>
+            <div class="d-flex justify-content-center flex-wrap gap-4 mt-5">
+            <div class="card" data-aos="flip-left"
+     data-aos-easing="ease-out-cubic"
+     data-aos-duration="2000">
+                <h6 style="color:white;">WRIST BAND</h6>
+                <h4><span style="color: #3aedab;">Mint Green</span></h4>
+                <img src="https://jevelin.shufflehound.com/single-product/wp-content/uploads/sites/29/2018/03/Watch5.jpg">
+            </div>
+
+            <div class="card" data-aos="flip-left"
+     data-aos-easing="ease-out-cubic"
+     data-aos-duration="2000">
+                <h6 style="color:white;">WRIST BAND</h6>
+                <h4><span style="color: #ab3aed;">Purple Berry</span></h4>
+                <img src="https://jevelin.shufflehound.com/single-product/wp-content/uploads/sites/29/2018/03/Watch2-768x917.jpg">
+            </div>
+
+            <div class="card" data-aos="flip-left"
+     data-aos-easing="ease-out-cubic"
+     data-aos-duration="2000">
+                <h6 style="color:white;">WRIST BAND</h6>
+                <h4><span style="color: #3aedab;">Golden Sunset</span></h4>
+                <img src="https://jevelin.shufflehound.com/single-product/wp-content/uploads/sites/29/2018/03/Watch6.jpg">
+            </div>
+            </div>
+        </div>
+    </div>
+    <button class="mt-5">SEE MORE</button>
+</section>
+
+<section class="s7">
+    <div class="container">
+        <div class="row">
+            <h1>What our<br>customers say</h1>
+            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Mauris vitae odales lectus, non ultrices nisi. In varius, leo non gravida.</p>
+            <p>99</p>
+        </div>
+    </div>
+</section>
+
+<section class="s8">
+    <div class="container">
+        <div class="row">
+            <div class="d-flex justify-content-center mr-5 ml-5">
+                <i class="fa-brands fa-youtube"></i>
+                <i class="fa-brands fa-twitter"></i>
+                <i class="fa-brands fa-facebook"></i>
+                <i class="fa-brands fa-instagram"></i>
+            </div>
+        </div>
+    </div>
+</section>
+
+<section class="s9">
+    <div class="container">
+        <div class="row">
+            <div class="d-flex justify-content-center mr-5 ml-5">
+                <div class="col-lg-4 col-md-6 col-sm-12 p-4">
+                <h4>Jevelin</h4>
+                <p>Lorem ipsum dolor sit amet, consectetuer adipiscing elit, sed diam.</p>
+                </div>
+
+                <div class="col-lg-4 col-md-6 col-sm-12 p-4">
+                    <h5>BEST EXPERIENCE</h5>
+                    <p>FAQ</p>
+                    <p>Shipment</p>
+                    <p>Returns</p>
+                    <p>Gift cards</p>
+                    <p>Policies</p>
+                </div>
+
+                <div class="col-lg-4 col-md-6 col-sm-12 p-4">
+                    <h5>COMPANY</h5>
+                    <p>About Us</p>
+                    <p>Press</p>
+                    <p>Offices</p>
+                    <p>Affiliates</p>
+                    <p>Giveaways</p>
+                </div>
+
+            </div>
+            <div class="d-flex justify-content-center mr-5 ml-5">
+                <p style="color:rgb(167, 167, 167);">Copyright © 2018 JevelinTheme - Theme by Shufflehound</p>
+            </div>
+        </div>
+    </div>
+
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js"></script>
+<script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+<script>
+    AOS.init();
+</script>
+
+</body>
+</html>
