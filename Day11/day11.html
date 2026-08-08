@@ -1,0 +1,200 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <!--
+    static websites
+    dynamic websites js
+
+    features
+    add to cart
+    filters
+    sorting
+    form validations
+    crud
+
+    javascript is a high level interpreted programming language that is used to add dynamic nature to the website.
+
+    It was introduced in 1991 by Brendan Eich
+    es1, es2, es3, es4, es5(pre requisite for learning react) - ecmascript
+
+    How to insert javascript
+    1) inline
+        <button onclick='console.log("inline js")'>Click Me</button>
+    2) internal
+        <script>
+            console.log("internal js");
+        </script>
+    3) external
+        script.js
+        console.log("external js");
+        <script src="script.js"></script>
+
+    variables : variables are like containers that are used to store data and data could be anuthing.
+    Variables are defined with var, let and const keywords followed by variable name followed by value.
+
+    var a = 10;
+    let b = 20;
+    const c = 30;
+    console.log(a,b,c);
+
+    variable terms
+    variable declaration
+    var a;
+
+    console.log(a); // undefined
+    undefined : when a variable is declared but not assigned with any value then it is undefined.
+
+    assignment : when a variable is already declared and then assigned with a value then it is assignment.
+    var b;
+    b = 20;
+
+    initialization : when a variable is declared and assigned with a value then it is initialized.
+    var c = 30;
+
+    not defined
+    console.log(c); // ReferenceError: c is not defined
+
+    hoisting : a behaviour of js where the declaration of variables and functions are moved to the top of their scope before code execution.
+
+    operators
+
+    datatypes:
+    1) primitive datatypes
+        a) which stores single values
+        b) which are immutable
+        c) which stores in stack
+
+        i) strings : collection of characters enclosed in single or double quotes.
+        
+        iii) boolean
+            true or false
+            var isAdmin = true;
+            var isAdmin = false;
+            var membership = true;
+            var isActive = true;
+            console.log(isAdmin);
+    
+        iv) undefined
+            it is an intentional absence of a value
+            var id = null;
+            console.log(id+10); // 10
+
+    2) non primitive datatypes
+        a) which stores multiple values
+        b) which are mutable
+        c) which stores in heap
+
+        i) Arrays: it is used to store multiple values in a single variable. It stores both homogeneous and heterogeneous
+            var arr = [1, true, 'hello'];
+            console.log(arr); // [1, true, 'hello']
+            console.log(arr[2]); // hello
+        
+        ii) Objects: it is used to store collection of data in key value pairs. It stores only heterogeneous values.
+            It can be accessed by named indexing.
+            let obj = {
+            javabatchno:2,
+            batchcount:25,
+            pythonbatchno:3
+            }
+
+            obj.javabatchno = 6;
+
+            console.log(obj) // { javabatchno: 6, batchcount: 25, pythonbatchno: 3 }
+            console.log(obj.javabatchno) // 6
+            console.log(obj['batchcount']) // 25
+            console.log(obj.pythonbatchno) // 3
+
+        iii) Functions:
+            function greet(){
+            console.log("Hello World");
+            }
+            greet(); // Hello World
+
+            -> to check type of a variable we use typeof operator
+            console.log(typeof(a)) // number
+    
+
+    conditional statements
+    loops
+    functions
+    dom (document object model)
+    asynchronous concepts
+    callbacks promises 
+
+
+    => To take input from user we use prompt() method and to display output we use alert() method.
+    var marks =prompt("Enter your marks:");
+    console.log(marks);
+    -->
+</head>
+<body>
+    <!--<button onclick='console.log("inline js")'>Click Me</button>-->
+
+    <div id="container"></div>
+
+    <script>
+        //console.log("internal js");
+        /*var a;
+        console.log(a);
+
+        var b;
+        b = 20;
+        console.log(b);
+
+        var c = 30;
+        console.log(c);
+
+        console.log(z);
+        var z=10;*/ 
+
+        /*
+        var s = 'Hello World';
+        console.log(s[0]);
+        s[0] = 'z';
+        console.log(s);*/ //Hello World
+
+        /*let data = [2, 25, 3];
+        let obj = {
+            javabatchno:2,
+            batchcount:25,
+            pythonbatchno:3
+        }*/ 
+
+       /* function greet(){
+            console.log("Hello World");
+            }
+            greet();*/ 
+
+        var marks =prompt("Enter your marks:");
+        var grade = "";
+        console.log(marks);
+
+        if(marks>=90){
+            grade="A+";
+        }
+        else if(marks>=80 && marks<90){
+            grade="A";
+        }
+        else if(marks>=70 && marks<80){
+            grade="B+";
+        }
+        else if(marks>=60 && marks<70){
+            grade="B";
+        }
+        else if(marks>=50 && marks<60){
+            grade="C";
+        }
+        else{
+            grade="F";
+        }
+
+        let container = document.getElementById("container");
+        container.innerHTML = `Your grade is <h1>${grade}</h1>`;
+    </script>
+
+    <!--<script src="demo.js"></script>-->
+</body>
+</html>
